@@ -1,0 +1,27 @@
+<resources>
+    <string name="value_empty">Value is empty</string>
+    <string name="value_blank">Value is blank</string>
+    <string name="value_too_short">Value is too short</string>
+    <string name="value_too_long">Value is too long</string>
+
+    <string name="rhythm_must_set">Rhythm must set</string>
+
+    <string name="screen_must_set">Screen must set</string>
+
+    <string name="ending_must_set">End day must set, chose either end or duration</string>
+    <string name="ending_too_much_set">Chose either end or duration, not both</string>
+
+    <string name="end_after_begin">End day should be after begin day</string>
+
+    <string name="date_must_set">Date must set</string>
+    <string name="date_too_old">Date is too old</string>
+    <string name="date_too_far">Date is too far</string>
+
+    <string name="duration_negative">Duration cannot be negative</string>
+    <string name="duration_zero">Duration cannot be 0</string>
+    <string name="duration_too_short">Duration too short</string>
+    <string name="duration_too_long">Duration too long</string>
+
+    <string name="event_without_cycle">Error an event without its cycle</string>
+    <string name="wallpaper_not_supported">Your device does not support wallpaper</string>
+</resources>

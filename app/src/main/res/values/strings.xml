@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Easy cyclewall</string>
+    <string name="app_short">Cyclewall</string>
+
+    <string name="title_list_cycles">List of Cycles</string>
+
+    <string name="title_settings">settings</string>
+    <string name="title_create">Create</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_list">List</string>
+    <string name="title_view">View</string>
+
+    <string name="title_event">Event</string>
+    <string name="title_events">Events</string>
+    <string name="title_cycle">Cycle</string>
+    <string name="title_cycles">Cycles</string>
+
+    <string name="action_cycles">cycles</string>
+    <string name="action_next">next</string>
+    <string name="action_cyclewall">cyclewall</string>
+    <string name="action_settings">settings</string>
+
+    <string name="populate">populate</string>
+    <string name="clear">clear</string>
+    <string name="picture">picture</string>
+
+    <string name="rhythm">Rhythm</string>
+    <string name="title">Title</string>
+    <string name="begin">Begin</string>
+    <string name="hint_ending">Select the end day, chose either a day or a duration</string>
+    <string name="hint_now">Select the current day to check refresh</string>
+    <string name="hint_filter">Filter on the target screen </string>
+    <string name="end">End</string>
+    <string name="refresh">Refresh</string>
+    <string name="refreshAll">RefreshAll</string>
+    <string name="duration">Duration</string>
+    <string name="populate_seasons">seasons</string>
+    <string name="populate_year">Year</string>
+    <string name="populate_christmas">Christmas</string>
+    <string name="drawings">Drawings</string>
+    <string name="paintings">Paintings</string>
+    <string name="nextAlso">Generate NextEvent</string>
+    <string name="resource_picker">Resources</string>
+    <string name="picker_long_resource">R</string>
+    <string name="day">Day</string>
+    <string name="now">Now</string>
+    <string name="specials">Specials</string>
+    <string name="populate_months1">Months 1</string>
+    <string name="populate_months2">Months 2</string>
+    <string name="job">Job parameters</string>
+    <string name="cancel">Cancel</string>
+    <string name="start">Start</string>
+    <string name="workinfo_schedule">Schedules at</string>
+    <string name="workinfo_state">State</string>
+    <string name="cancel_all">Cancel All</string>
+    <string name="populate_months3">Months 3</string>
+    <string name="on_screen">On %1$s screen</string>
+    <string name="next_day">Next day at</string>
+    <string name="screen">Chose the target screen</string>
+    <plurals name="duration">
+        <item quantity="zero">no day</item>
+        <item quantity="one">one day</item>
+        <item quantity="two">two days</item>
+        <item quantity="few">%1$d days</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+
+
+</resources>

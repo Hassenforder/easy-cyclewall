@@ -1,0 +1,28 @@
+<resources>
+    <string-array name="rhythms">
+        <item> No rhythm</item>
+        <item> Every year</item>
+        <item> Every month</item>
+        <item> Every week</item>
+        <item> One day</item>
+    </string-array>
+    <string-array name="on_screen">
+        <item> System </item>
+        <item> Lock </item>
+        <item> System and lock </item>
+    </string-array>
+    <string-array name="screen_filter">
+        <item> All </item>
+        <item> System </item>
+        <item> Lock </item>
+    </string-array>
+    <string-array name="workinfo_stateValues">
+        <item>Enqueued</item>
+        <item>Running</item>
+        <item>Succeeded</item>
+        <item>Failed</item>
+        <item>Blocked</item>
+        <item>Cancelled</item>
+    </string-array>
+    <string name="workinfo_no_value">No info yet</string>
+</resources>
