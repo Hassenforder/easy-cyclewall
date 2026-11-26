@@ -17,6 +17,7 @@ import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Error
 import androidx.compose.material.icons.outlined.FilterFrames
 import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
@@ -62,6 +63,9 @@ import fr.uha.hassenforder.easy.android.ui.field.date.ActionOneWeekMore
 import fr.uha.hassenforder.easy.android.ui.field.date.DateTimeFieldProperties
 import fr.uha.hassenforder.easy.android.ui.field.date.OutlinedLocalDateTimeField
 import fr.uha.hassenforder.easy.cyclewall.icons.outlined.PhotoFrame
+import fr.uha.hassenforder.easy.cyclewall.ui.cycle.CycleOnScreen
+import fr.uha.hassenforder.easy.cyclewall.ui.field.EventDayRange
+import fr.uha.hassenforder.easy.cyclewall.ui.field.EventDecoratedTitle
 import java.time.LocalDateTime
 
 @Composable
@@ -192,92 +196,28 @@ private fun EventItem (
     fullEvent : FullEvent,
     send : (ListEventViewModel.UIEvent) -> Unit,
 ) {
-    val cycle = fullEvent.cycle!!
-    ListItem(
-        modifier = Modifier.fillMaxWidth(),
-        supportingContent = {
-            Box (modifier = Modifier.fillMaxWidth()) {
-                AsyncImage(
-                    model = cycle.wallpaper,
-                    contentDescription = null,
-                    error = rememberVectorPainter(Icons.Outlined.PhotoFrame),
-                    placeholder = rememberVectorPainter(Icons.Outlined.HourglassBottom),
-                )
-                Column (
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(3.dp)
-                        .background(Color.Black.copy(alpha = 0.2F))
-                        .padding(5.dp)
-                ) {
-                    EventDayRange(fullEvent.event.begin, fullEvent.event.end)
-                    EventOnScreen(fullEvent.cycle)
-                }
-            }
-        },
-        content = {
-            Row (
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(cycle.title, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                if (fullEvent == uiState.current) {
-                    Icon(
-                        imageVector = Icons.Filled.Star,
-                        contentDescription = "",
-                        tint = Color.Magenta,
-                    )
-                }
-                Spacer (modifier = Modifier.weight(1F))
-                Text(
-                    stringArrayResource(R.array.rhythms)[cycle.rhythm.ordinal],
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
-                )
-            }
-        },
-    )
-}
-
-@Composable
-private fun EventDayRange (
-    begin : LocalDateTime,
-    end : LocalDateTime,
-) {
-    Row(
-        horizontalArrangement = Arrangement.spacedBy(6.dp),
-        verticalAlignment = Alignment.CenterVertically
+    Card (
+        modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp)
     ) {
-        Text(
-            Converter.convert(begin),
-            color = Color.White,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Text(
-            "..",
-            color = Color.White,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Text(
-            Converter.convert(end),
-            color = Color.White,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold,
-        )
+        val cycle = fullEvent.cycle!!
+        Box(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            AsyncImage(
+                model = cycle.wallpaper,
+                contentDescription = null,
+            )
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp)
+                    .background(Color.Black.copy(alpha = 0.2F))
+                    .padding(4.dp)
+            ) {
+                EventDecoratedTitle(cycle, fullEvent == uiState.current)
+                EventDayRange(fullEvent.event.begin, fullEvent.event.end)
+                CycleOnScreen(cycle)
+            }
+        }
     }
-}
-
-@Composable
-private fun EventOnScreen (
-    cycle : Cycle
-) {
-    Text(
-        stringResource(R.string.on_screen, stringArrayResource(R.array.on_screen)[cycle.screen.ordinal]),
-        color = Color.White,
-        modifier = Modifier.fillMaxWidth(),
-        fontSize = 16.sp,
-        fontWeight = FontWeight.Bold,
-    )
 }
